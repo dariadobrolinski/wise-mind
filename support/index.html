@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | WiseMind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage-50: #f6f7f5;
+            --sage-100: #e8ebe5;
+            --sage-200: #d1d8c9;
+            --sage-300: #adb9a0;
+            --sage-400: #8a9b79;
+            --sage-500: #6b7f5a;
+            --sage-600: #546647;
+            --sage-700: #424f38;
+            --sage-800: #37412f;
+            --sage-900: #2d352a;
+            --warm-white: #fdfcfa;
+            --text-primary: #2a2f26;
+            --text-secondary: #5c6356;
+            --accent: #7c9a6e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(165deg, var(--sage-50) 0%, var(--warm-white) 40%, #f5f4f0 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            font-weight: 400;
+        }
+
+        .pattern-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(124, 154, 110, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(124, 154, 110, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--sage-100);
+            background: rgba(253, 252, 250, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--sage-700);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--sage-600);
+        }
+
+        nav a.active {
+            color: var(--sage-700);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .content {
+            background: var(--warm-white);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 
+                0 1px 3px rgba(45, 53, 42, 0.04),
+                0 6px 16px rgba(45, 53, 42, 0.03);
+            border: 1px solid var(--sage-100);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--sage-200);
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sage-700);
+            margin-bottom: 1rem;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            color: var(--sage-600);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            background: var(--warm-white);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid var(--sage-200);
+        }
+
+        .email-link:hover {
+            background: var(--sage-50);
+            color: var(--sage-700);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 53, 42, 0.1);
+        }
+
+        .email-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sage-700);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-100);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            color: var(--sage-700);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: var(--sage-50);
+            border: 1px solid var(--sage-200);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--warm-white);
+            box-shadow: 0 0 0 3px rgba(124, 154, 110, 0.15);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235c6356' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 2rem;
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--warm-white);
+            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, var(--sage-500) 0%, var(--sage-600) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(66, 79, 56, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .response-time {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--sage-50);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .response-time strong {
+            color: var(--sage-700);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
+            border-radius: 12px;
+            border: 1px solid var(--sage-200);
+            margin-top: 1.5rem;
+        }
+
+        .success-message svg {
+            width: 48px;
+            height: 48px;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .success-message h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sage-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--sage-100);
+            background: rgba(253, 252, 250, 0.5);
+        }
+
+        footer p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--sage-600);
+            text-decoration: underline;
+            text-decoration-color: var(--sage-300);
+            text-underline-offset: 2px;
+            transition: all 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--sage-700);
+            text-decoration-color: var(--sage-500);
+        }
+
+        @media (max-width: 640px) {
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            main {
+                padding: 2rem 1rem 4rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+
+            .email-link {
+                font-size: 1rem;
+                padding: 0.625rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern-overlay"></div>
+    
+    <header>
+        <a href="/" class="logo">Wise<span>Mind</span></a>
+        <nav>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/support" class="active">Support</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Support</h1>
+            <p class="hero-subtitle">We're here to help. Reach out with any questions, feedback, or concerns.</p>
+        </div>
+
+        <div class="content">
+            <div class="contact-info">
+                <h3>Contact Us Directly</h3>
+                <a href="mailto:josuexdaria@gmail.com" class="email-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    josuexdaria@gmail.com
+                </a>
+            </div>
+
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+            <form action="https://formsubmit.co/josuexdaria@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New WiseMind Support Inquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://dariadobrolinski.github.io/wise-mind/support/?submitted=true">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="Account Issues">Account Issues</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    Send Message
+                </button>
+            </form>
+
+            <div class="response-time">
+                <strong>Average response time:</strong> We typically respond within 24-48 hours.
+            </div>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Show success message if form was submitted
+        if (window.location.search.includes('submitted=true')) {
+            document.getElementById('successMessage').style.display = 'block';
+            document.querySelector('form').style.display = 'none';
+            document.querySelector('.response-time').style.display = 'none';
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 WiseMind. All rights reserved. <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a> · <a href="/support">Support</a></p>
+    </footer>
+</body>
+</html>
+
