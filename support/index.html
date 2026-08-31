@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../public/favicon.png">
-    <title>Support | WiseMind</title>
+    <title>Privacy Policy | WiseMind</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="public/icon_nobg"
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -120,12 +121,10 @@
             letter-spacing: -0.01em;
         }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
+        .last-updated {
+            font-size: 0.9rem;
             color: var(--text-secondary);
             font-weight: 300;
-            max-width: 500px;
-            margin: 0 auto;
         }
 
         .content {
@@ -138,16 +137,15 @@
             border: 1px solid var(--sage-100);
         }
 
-        .contact-info {
+        .summary-box {
             background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.75rem;
             margin-bottom: 2.5rem;
             border: 1px solid var(--sage-200);
-            text-align: center;
         }
 
-        .contact-info h3 {
+        .summary-box h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1.25rem;
             font-weight: 600;
@@ -155,30 +153,26 @@
             margin-bottom: 1rem;
         }
 
-        .email-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.1rem;
-            color: var(--sage-600);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            background: var(--warm-white);
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            border: 1px solid var(--sage-200);
+        .summary-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .email-link:hover {
-            background: var(--sage-50);
-            color: var(--sage-700);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(45, 53, 42, 0.1);
+        .summary-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text-primary);
+            font-size: 0.95rem;
         }
 
-        .email-link svg {
-            width: 20px;
-            height: 20px;
+        .summary-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
         }
 
         h2 {
@@ -195,136 +189,100 @@
             margin-top: 0;
         }
 
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--sage-600);
+            margin: 1.5rem 0 0.75rem;
+        }
+
         p {
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        ul, ol {
+            margin: 1rem 0 1.5rem 1.5rem;
         }
 
-        label {
-            display: block;
-            font-weight: 500;
-            color: var(--sage-700);
+        li {
             margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        li::marker {
+            color: var(--sage-400);
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--sage-800);
+        }
+
+        a {
+            color: var(--sage-600);
+            text-decoration: underline;
+            text-decoration-color: var(--sage-300);
+            text-underline-offset: 2px;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--sage-700);
+            text-decoration-color: var(--sage-500);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--sage-50) 0%, var(--sage-100) 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .highlight-box p + p {
+            margin-top: 0.75rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
             font-size: 0.95rem;
         }
 
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 1rem;
-            color: var(--text-primary);
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-100);
+        }
+
+        .data-table th {
             background: var(--sage-50);
-            border: 1px solid var(--sage-200);
-            border-radius: 8px;
-            transition: all 0.2s ease;
+            font-weight: 600;
+            color: var(--sage-700);
         }
 
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: var(--warm-white);
-            box-shadow: 0 0 0 3px rgba(124, 154, 110, 0.15);
+        .data-table tr:last-child td {
+            border-bottom: none;
         }
 
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235c6356' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
-        }
-
-        .submit-btn {
+        .icon-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
-            width: 100%;
-            padding: 1rem 2rem;
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--warm-white);
-            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .submit-btn:hover {
-            background: linear-gradient(135deg, var(--sage-500) 0%, var(--sage-600) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(66, 79, 56, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .submit-btn svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .response-time {
-            text-align: center;
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: var(--sage-50);
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .response-time strong {
+            background: var(--sage-100);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
             color: var(--sage-700);
-        }
-
-        .success-message {
-            text-align: center;
-            padding: 2.5rem 2rem;
-            background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
-            border-radius: 12px;
-            border: 1px solid var(--sage-200);
-            margin-top: 1.5rem;
-        }
-
-        .success-message svg {
-            width: 48px;
-            height: 48px;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .success-message h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--sage-700);
-            margin-bottom: 0.5rem;
-        }
-
-        .success-message p {
-            color: var(--text-secondary);
-            margin: 0;
         }
 
         footer {
@@ -342,15 +300,6 @@
 
         footer a {
             color: var(--sage-600);
-            text-decoration: underline;
-            text-decoration-color: var(--sage-300);
-            text-underline-offset: 2px;
-            transition: all 0.2s ease;
-        }
-
-        footer a:hover {
-            color: var(--sage-700);
-            text-decoration-color: var(--sage-500);
         }
 
         @media (max-width: 640px) {
@@ -367,13 +316,13 @@
                 font-size: 0.85rem;
             }
 
-            .contact-info {
-                padding: 1.5rem;
+            .data-table {
+                font-size: 0.85rem;
             }
 
-            .email-link {
-                font-size: 1rem;
-                padding: 0.625rem 1.25rem;
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
             }
         }
     </style>
@@ -382,108 +331,185 @@
     <div class="pattern-overlay"></div>
     
     <header>
-        <a href="/wise-mind/" class="logo">Wise<span>Mind</span></a>
+        <a href="/" class="logo">Wise<span>Mind</span></a>
         <nav>
-            <a href="/wise-mind/terms-of-service/">Terms of Service</a>
-            <a href="/wise-mind/privacy-policy/">Privacy Policy</a>
-            <a href="/wise-mind/support/" class="active">Support</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/privacy-policy" class="active">Privacy Policy</a>
         </nav>
     </header>
 
     <main>
         <div class="hero">
-            <h1>Support</h1>
-            <p class="hero-subtitle">We're here to help. Reach out with any questions, feedback, or concerns.</p>
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: August 31, 2026</p>
         </div>
 
         <div class="content">
-            <div class="contact-info">
-                <h3>Contact Us Directly</h3>
-                <a href="mailto:josuexdaria@gmail.com" class="email-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    josuexdaria@gmail.com
-                </a>
+            <div class="summary-box">
+                <h3>Privacy at a Glance</h3>
+                <ul>
+                    <li>Your journals and S.O.S. lists are stored locally on your device by default</li>
+                    <li>We have no access to your locally stored personal data</li>
+                    <li>Cloud sync is optional — you choose whether to enable it</li>
+                    <li>You can change your data storage preferences anytime in Profile Settings</li>
+                    <li>We never sell your personal information</li>
+                    <li>We use Meta Events Manager to measure ad performance and Sentry for crash reporting — neither ever sees your journals or S.O.S. lists</li>
+                </ul>
             </div>
 
-            <h2>Send Us a Message</h2>
-            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+            <h2>1. Introduction</h2>
+            <p>At WiseMind, we believe your mental health journey is deeply personal. This Privacy Policy explains how we collect, use, and protect your information when you use our DBT skills training application.</p>
+            <p>We've designed WiseMind with privacy as a core principle. Your most sensitive data — including your journal entries and S.O.S. lists — stays on your device by default, giving you complete control over your personal information.</p>
 
-            <form action="https://formsubmit.co/josuexdaria@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New WiseMind Support Inquiry">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://dariadobrolinski.github.io/wise-mind/support/?submitted=true">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
-                </div>
+            <h2>2. Information We Collect</h2>
+            
+            <h3>Information Stored Locally (On Your Device)</h3>
+            <div class="highlight-box">
+                <p><strong>By default, the following data is stored only on your device.</strong> We cannot access, view, or retrieve this information unless you explicitly enable cloud synchronization:</p>
+            </div>
+            <ul>
+                <li><strong>Journal Entries:</strong> All thoughts, reflections, and personal entries you create</li>
+                <li><strong>S.O.S. Lists:</strong> Your personalized coping strategies and emergency contact information</li>
+                <li><strong>Progress Data:</strong> Your skill practice history and personal notes</li>
+                <li><strong>Custom Settings:</strong> Your app preferences and personalization choices</li>
+            </ul>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                </div>
+            <h3>Information We May Collect</h3>
+            <p>When you use certain features of WiseMind, we may collect:</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Purpose</th>
+                        <th>Storage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Account Information</td>
+                        <td>To create your account (if you choose cloud sync)</td>
+                        <td>Our servers</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td>Account recovery and important updates</td>
+                        <td>Our servers</td>
+                    </tr>
+                    <tr>
+                        <td>Usage Analytics</td>
+                        <td>To improve app performance (anonymized)</td>
+                        <td>Analytics provider</td>
+                    </tr>
+                    <tr>
+                        <td>Crash Reports</td>
+                        <td>To fix bugs and improve stability</td>
+                        <td>Sentry</td>
+                    </tr>
+                    <tr>
+                        <td>Advertising Event Data</td>
+                        <td>To measure and improve the performance of our ad campaigns</td>
+                        <td>Meta (Facebook) Events Manager</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="" disabled selected>Select a topic</option>
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="Account Issues">Account Issues</option>
-                        <option value="Feature Request">Feature Request</option>
-                        <option value="Bug Report">Bug Report</option>
-                        <option value="Feedback">Feedback</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
+            <h3>Third-Party Analytics, Advertising & Crash Reporting</h3>
+            <p>We work with the following third-party service providers to help us understand app usage, measure the effectiveness of our marketing, and diagnose technical issues:</p>
+            <ul>
+                <li><strong>Meta (Facebook) Events Manager:</strong> We share certain app events (such as installs, sign-ups, and feature usage) with Meta Platforms, Inc. to measure and improve the performance of our advertising campaigns. This may include device and event identifiers, but never your journal entries, S.O.S. lists, or other personal content. You can manage how your data is used for advertising through your device's privacy settings (e.g., App Tracking Transparency) or directly with Meta at <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>.</li>
+                <li><strong>Sentry:</strong> We use Sentry to collect crash reports and error diagnostics so we can identify and fix bugs. Crash data may include device information and app state at the time of the error, but does not include your journal entries or S.O.S. lists.</li>
+            </ul>
+            <p>These providers only receive the data necessary to perform their services and do not have access to your locally stored personal data.</p>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                    Send Message
-                </button>
-            </form>
-
-            <div class="response-time">
-                <strong>Average response time:</strong> We typically respond within 24 - 48 hours.
+            <h2>3. Cloud Synchronization — Your Choice</h2>
+            <p>We understand that some users want to access their data across multiple devices or keep a secure backup. That's why we offer optional cloud synchronization.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Cloud sync is entirely optional.</strong> You can enable or disable it at any time from your <strong>Profile Settings</strong>.</p>
+                <p>When cloud sync is enabled, your journals and S.O.S. lists are encrypted and stored securely on our servers, allowing you to access them from any device where you're logged in.</p>
             </div>
 
-            <div class="success-message" id="successMessage" style="display: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
-            </div>
+            <h3>What Happens When You Enable Cloud Sync</h3>
+            <ul>
+                <li>Your journal entries and S.O.S. lists are encrypted and uploaded to our secure servers</li>
+                <li>You can access your data across all your devices</li>
+                <li>Your data is automatically backed up</li>
+                <li>Data is encrypted both in transit and at rest</li>
+            </ul>
+
+            <h3>What Happens When You Disable Cloud Sync</h3>
+            <ul>
+                <li>New entries are stored only on your device</li>
+                <li>Previously synced data can be deleted from our servers upon request</li>
+                <li>Local data on your device remains unaffected</li>
+                <li>You can re-enable sync at any time</li>
+            </ul>
+
+            <h2>4. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain the WiseMind application</li>
+                <li>Sync your data across devices (if you enable this feature)</li>
+                <li>Send important service updates and security notifications</li>
+                <li>Improve app performance and fix issues</li>
+                <li>Develop new features based on aggregated, anonymized usage patterns</li>
+                <li>Measure and improve the performance of our advertising campaigns (via Meta Events Manager)</li>
+            </ul>
+            <p><strong>We never:</strong></p>
+            <ul>
+                <li>Sell your personal information to third parties</li>
+                <li>Read your journal entries or personal content</li>
+                <li>Use your journal entries, S.O.S. lists, or other personal content for advertising purposes</li>
+                <li>Share identifiable information with researchers or institutions without consent</li>
+            </ul>
+
+            <h2>5. Data Security</h2>
+            <p>We take the security of your information seriously:</p>
+            <ul>
+                <li><strong>Encryption:</strong> All data transmitted to our servers is encrypted using TLS. Stored data is encrypted at rest using AES-256.</li>
+                <li><strong>Access Controls:</strong> Strict access controls limit who can interact with our systems.</li>
+                <li><strong>Regular Audits:</strong> We conduct regular security reviews and vulnerability assessments.</li>
+                <li><strong>Secure Infrastructure:</strong> Our servers are hosted on reputable cloud providers with enterprise-grade security.</li>
+            </ul>
+
+            <h2>6. Data Retention</h2>
+            <h3>Local Data</h3>
+            <p>Data stored on your device remains there until you delete the app or clear the data manually. We have no control over locally stored information.</p>
+
+            <h3>Cloud-Synced Data</h3>
+            <p>If you use cloud sync, your data is retained as long as your account is active. You can:</p>
+            <ul>
+                <li>Delete individual entries at any time</li>
+                <li>Request deletion of all cloud-stored data</li>
+                <li>Export your data before deletion</li>
+                <li>Delete your account entirely</li>
+            </ul>
+
+            <h2>7. Your Rights & Choices</h2>
+            <p>You have control over your data:</p>
+            <ul>
+                <li><strong>Access:</strong> View all data associated with your account</li>
+                <li><strong>Portability:</strong> Export your data in a standard format</li>
+                <li><strong>Correction:</strong> Update or correct your account information</li>
+                <li><strong>Deletion:</strong> Delete your data or account entirely</li>
+                <li><strong>Consent:</strong> Change your cloud sync preferences at any time in Profile Settings</li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>WiseMind is not intended for children under 13. If you are between 13 and 18, please use the app with parental guidance. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make significant changes, we will notify you through the app or via email (if you've provided one). We encourage you to review this policy periodically.</p>
+
+            <h2>10. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or your data, please reach out:</p>
+            <p><strong>Email:</strong>josuexdaria@gmail.com</p>
+            <p>We aim to respond to all inquiries within 30 days.</p>
         </div>
     </main>
 
-    <script>
-        // Show success message if form was submitted
-        if (window.location.search.includes('submitted=true')) {
-            document.getElementById('successMessage').style.display = 'block';
-            document.querySelector('form').style.display = 'none';
-            document.querySelector('.response-time').style.display = 'none';
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    </script>
-
     <footer>
-        <p>&copy; 2025 WiseMind. All rights reserved. <a href="/wise-mind/privacy-policy/">Privacy Policy</a> · <a href="/wise-mind/terms-of-service/">Terms of Service</a> · <a href="/wise-mind/support/">Support</a></p>
+        <p>&copy; 2025 WiseMind. All rights reserved. <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a></p>
     </footer>
 </body>
 </html>
-
