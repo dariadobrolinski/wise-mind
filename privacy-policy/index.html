@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../public/favicon.png">
     <title>Privacy Policy | WiseMind</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="backend/pic/icon_nobg.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -330,18 +331,17 @@
     <div class="pattern-overlay"></div>
     
     <header>
-        <a href="/wise-mind/" class="logo">Wise<span>Mind</span></a>
+        <a href="/" class="logo">Wise<span>Mind</span></a>
         <nav>
-            <a href="/wise-mind/terms-of-service/">Terms of Service</a>
-            <a href="/wise-mind/privacy-policy/" class="active">Privacy Policy</a>
-            <a href="/wise-mind/support/">Support</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/privacy-policy" class="active">Privacy Policy</a>
         </nav>
     </header>
 
     <main>
         <div class="hero">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: December 2, 2025</p>
+            <p class="last-updated">Last Updated: August 31, 2026</p>
         </div>
 
         <div class="content">
@@ -353,6 +353,7 @@
                     <li>Cloud sync is optional — you choose whether to enable it</li>
                     <li>You can change your data storage preferences anytime in Profile Settings</li>
                     <li>We never sell your personal information</li>
+                    <li>We use Meta Events Manager to measure ad performance and Sentry for crash reporting — neither ever sees your journals or S.O.S. lists</li>
                 </ul>
             </div>
 
@@ -402,24 +403,38 @@
                     <tr>
                         <td>Crash Reports</td>
                         <td>To fix bugs and improve stability</td>
-                        <td>Error tracking service</td>
+                        <td>Sentry</td>
+                    </tr>
+                    <tr>
+                        <td>Advertising Event Data</td>
+                        <td>To measure and improve the performance of our ad campaigns</td>
+                        <td>Meta (Facebook) Events Manager</td>
                     </tr>
                 </tbody>
             </table>
+
+            <h3>Third-Party Analytics, Advertising & Crash Reporting</h3>
+            <p>We work with the following third-party service providers to help us understand app usage, measure the effectiveness of our marketing, and diagnose technical issues:</p>
+            <ul>
+                <li><strong>Meta (Facebook) Events Manager:</strong> We share certain app events (such as installs, sign-ups, and feature usage) with Meta Platforms, Inc. to measure and improve the performance of our advertising campaigns. This may include device and event identifiers, but never your journal entries, S.O.S. lists, or other personal content. You can manage how your data is used for advertising through your device's privacy settings (e.g., App Tracking Transparency) or directly with Meta at <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>.</li>
+                <li><strong>Sentry:</strong> We use Sentry to collect crash reports and error diagnostics so we can identify and fix bugs. Crash data may include device information and app state at the time of the error, but does not include your journal entries or S.O.S. lists.</li>
+            </ul>
+            <p>These providers only receive the data necessary to perform their services and do not have access to your locally stored personal data.</p>
 
             <h2>3. Cloud Synchronization — Your Choice</h2>
             <p>We understand that some users want to access their data across multiple devices or keep a secure backup. That's why we offer optional cloud synchronization.</p>
             
             <div class="highlight-box">
                 <p><strong>Cloud sync is entirely optional.</strong> You can enable or disable it at any time from your <strong>Profile Settings</strong>.</p>
-                <p>When cloud sync is enabled, your journals and S.O.S. lists are stored on our servers, allowing you to access them from any device where you're logged in.</p>
+                <p>When cloud sync is enabled, your journals and S.O.S. lists are encrypted and stored securely on our servers, allowing you to access them from any device where you're logged in.</p>
             </div>
 
             <h3>What Happens When You Enable Cloud Sync</h3>
             <ul>
-                <li>Your journal entries and S.O.S. lists are uploaded to our servers</li>
+                <li>Your journal entries and S.O.S. lists are encrypted and uploaded to our secure servers</li>
                 <li>You can access your data across all your devices</li>
                 <li>Your data is automatically backed up</li>
+                <li>Data is encrypted both in transit and at rest</li>
             </ul>
 
             <h3>What Happens When You Disable Cloud Sync</h3>
@@ -438,21 +453,23 @@
                 <li>Send important service updates and security notifications</li>
                 <li>Improve app performance and fix issues</li>
                 <li>Develop new features based on aggregated, anonymized usage patterns</li>
+                <li>Measure and improve the performance of our advertising campaigns (via Meta Events Manager)</li>
             </ul>
             <p><strong>We never:</strong></p>
             <ul>
                 <li>Sell your personal information to third parties</li>
                 <li>Read your journal entries or personal content</li>
-                <li>Use your data for advertising purposes</li>
+                <li>Use your journal entries, S.O.S. lists, or other personal content for advertising purposes</li>
                 <li>Share identifiable information with researchers or institutions without consent</li>
             </ul>
 
             <h2>5. Data Security</h2>
-            <p>We follow best practices to protect your information:</p>
+            <p>We take the security of your information seriously:</p>
             <ul>
-                <li><strong>No Third-Party Sharing:</strong> We never share your data with third-party apps or services.</li>
+                <li><strong>Encryption:</strong> All data transmitted to our servers is encrypted using TLS. Stored data is encrypted at rest using AES-256.</li>
                 <li><strong>Access Controls:</strong> Strict access controls limit who can interact with our systems.</li>
-                <li><strong>Your Data Stays Yours:</strong> We do not sell, rent, or monetize your personal information in any way.</li>
+                <li><strong>Regular Audits:</strong> We conduct regular security reviews and vulnerability assessments.</li>
+                <li><strong>Secure Infrastructure:</strong> Our servers are hosted on reputable cloud providers with enterprise-grade security.</li>
             </ul>
 
             <h2>6. Data Retention</h2>
@@ -487,13 +504,12 @@
             <h2>10. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or your data, please reach out:</p>
             <p><strong>Email:</strong>josuexdaria@gmail.com</p>
-            <p>We aim to respond to all inquiries within 24 - 48 hours.</p>
+            <p>We aim to respond to all inquiries within 30 days.</p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 WiseMind. All rights reserved. <a href="/wise-mind/privacy-policy/">Privacy Policy</a> · <a href="/wise-mind/terms-of-service/">Terms of Service</a> · <a href="/wise-mind/support/">Support</a></p>
+        <p>&copy; 2025 WiseMind. All rights reserved. <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a></p>
     </footer>
 </body>
 </html>
-
